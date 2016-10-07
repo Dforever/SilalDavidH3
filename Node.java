@@ -31,5 +31,17 @@ public class Node{
 	public void setNext(Node Next) {
 		nxt = Next;
 	}
+	//This will return the data element
+		public String getData() {
+			return data;
+	}
+	//Getter that will return the node previous
+	public Node getPrevious() {
+		return pre;
+	}
+	//Getter that will return the node next
+	public Node getNext() {
+		return nxt;
+	}
 
 }
