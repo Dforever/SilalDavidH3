@@ -6,5 +6,18 @@ public class Node{
 	private Node pre;
 	//The node for Next
 	private Node nxt;
+	//This constructor contains just solely data
+	public Node(String Data) {
+		data = Data;
+		pre = null;
+		nxt = null;
+
+	}
+	//This constructor has data, previous, and next
+	public Node(String Data, Node Previous, Node Next) {
+		data = Data;
+		pre = Previous;
+		nxt = Next;
+	}
 
 }
