@@ -19,5 +19,17 @@ public class Node{
 		pre = Previous;
 		nxt = Next;
 	}
+	//Will set the data element
+	public void setData(String Data) {
+		data = Data;
+	}
+	//Will set the node of previous
+	public void setPrevious(Node Previous) {
+		pre = Previous;
+	}
+	//Will set the node of next
+	public void setNext(Node Next) {
+		nxt = Next;
+	}
 
 }
