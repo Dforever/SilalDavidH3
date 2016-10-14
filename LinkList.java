@@ -118,5 +118,54 @@ public void removeALL() {
 	}
 }
 
+//add to the list
+public void add(String info) {
+	ListNode newItem = new ListNode(info);
+	ListNode thisNode, tmp;
+	boolean ins = false;
+
+	//this is the new head - new list
+	if (headNode == null) {
+		System.out.println("***adding " + info + " to the new list as head ");
+		headNode = newItem;
+		tailNode = newItem;
+	} else if (headNode.getInfo().compareTo(info) >= 0) {
+		newItem.setTail(headNode);
+		tmp = headNode;
+		tmp.setHead(newItem);
+		headNode = newItem;
+
+		System.out.println("***adding " + info + " as the new head ");
+	} else {
+		tmp = headNode;
+		thisNode = headNode.getTail();
+		while (thisNode != null && !ins) {
+			int isBefore = tmp.getInfo().compareTo(info);
+			int isAfter = thisNode.getInfo().compareTo(info);
+			if (isAfter >= 0 && isBefore <= 0) {
+				newItem.setTail(thisNode);
+				newItem.setHead(tmp);
+				thisNode.setHead(newItem);
+				tmp.setTail(newItem);
+				ins = true;
+
+				System.out.println("***adding " + info + " to the middle ");
+				break;
+			} else {
+				tmp = thisNode;
+				thisNode = thisNode.getTail();
+			}
+		}
+		if (!ins) {
+			tmp.setTail(newItem);
+			newItem.setHead(tmp);
+			tailNode = newItem;
+
+			System.out.println("***adding " + info + " to the tail ");
+		}
+	}
+}
+
 
 }
+
