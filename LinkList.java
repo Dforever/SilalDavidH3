@@ -67,5 +67,56 @@ public boolean contains(String matchData) {
 	return f;
 }
 
+//remove from the list the element with the matching node info
+public void remove(String matchData) {
+	ListNode element = headNode;
+	//not found
+	boolean f = false;
+	//iterate through the list until found or break
+	while (element != null && !f) {
+		//find the comparison indicator for element to matchData
+		int compareDirection = element.getInfo().compareTo(matchData);
+		if (compareDirection == 0) {
+			f = true;
+			break;
+		} else {
+			element = element.getTail();
+		}
+	}
+	if (f) {
+		//unlink the element from previous
+		if (element.getHead() == null) {
+			headNode = element.getTail();
+		} else {
+			element.getHead().setTail(element.getTail());
+		}
+		//check to see if it has a next list node
+		if (element.getTail() != null) {
+			element.getTail().setHead(element.getHead());
+		} else {
+			tailNode = element.getHead();
+		}
+		//delete it
+		element = null;
+	}
+}
+
+//remove all entris from list
+public void removeALL() {
+	while (headNode != null) {
+		System.out.println("Removing node " + headNode.getInfo());
+		ListNode nextListNode = headNode.getTail();
+
+		//are we done?
+		if (nextListNode != null) {
+			nextListNode.setHead(null);
+		} else {
+			tailNode = null;
+			headNode = null;
+		}
+		headNode = nextListNode;
+	}
+}
+
 
 }
