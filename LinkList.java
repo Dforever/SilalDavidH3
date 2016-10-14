@@ -46,5 +46,26 @@ public int size() {
 	return count;
 }
 
+//does the list contain this node's info
+public boolean contains(String matchData) {
+	//start at the beginning
+	ListNode element = headNode;
+	boolean f = false;
+
+	//go through the list
+	while (element != null) {
+		//compare the element with matchData
+		int compareDirection = element.getInfo().compareTo(matchData);
+		if (compareDirection == 0) {
+			f= true;
+			break;
+		} else if (compareDirection > 0) {
+			break;
+		}
+		element= element.getTail();
+	}
+	return f;
+}
+
 
 }
