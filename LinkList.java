@@ -33,5 +33,18 @@ public void reversePrint() {
 	System.out.print("\n");
 }
 
+//Find the size of the list
+public int size() {
+	ListNode element = headNode;
+	int count = 0;
+	//go through each element
+	while (element != null)
+	{
+		count = count + 1;
+		element = element.getTail();
+	}
+	return count;
+}
+
 
 }
