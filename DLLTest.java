@@ -65,3 +65,29 @@ public class DLLTest {
 	        dll.reversePrint();
 	        System.out.println("  ==============");
     }
+
+/**
+     * Perform some automatic adds, deletes and displays on the list
+     */
+    private static void automaticActions(LinkList dll) {
+        addToListPrint("hobby", dll);
+        addToListPrint("bobby", dll);
+        addToListPrint("snobby", dll);
+        addToListPrint("clobber", dll);
+        addToListPrint("wobble", dll);
+        addToListPrint("zoo", dll);
+        addToListPrint("blue", dll);
+        System.out.println("List count is currently " + dll.size());
+        System.out.println("Does list contain moo? " + dll.contains("moo"));
+        System.out.println("Does list contain hobby? " + dll.contains("hobby"));
+        delFromListPrint("hobby", dll);
+        System.out.println("List count is currently " + dll.size());
+        System.out.println("Does list contain hobby? " + dll.contains("hobby"));
+        delFromListPrint("bobby", dll);
+        delFromListPrint("zoo", dll);
+
+        System.out.println("Removing all items from list");
+        dll.removeALL();
+        System.out.println("Printing list (should be empty)");
+        printFB(dll);
+    }
