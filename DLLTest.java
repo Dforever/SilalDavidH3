@@ -51,3 +51,17 @@ public class DLLTest {
             }
         } while (input.compareTo("9") != 0);
     }
+
+     /**
+	     * Helper method to print list
+	     * @param dll    list to print from
+	     */
+	    private static void printFB(LinkList dll) {
+	        System.out.println("  ++++++++++++++");
+	        System.out.println("  Print Forward");
+	        dll.print();
+	        System.out.println("  >>>>>>>>>>>>>>");
+	        System.out.println("  Print Backward");
+	        dll.reversePrint();
+	        System.out.println("  ==============");
+    }
