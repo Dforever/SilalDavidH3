@@ -91,3 +91,23 @@ public class DLLTest {
         System.out.println("Printing list (should be empty)");
         printFB(dll);
     }
+
+    /**
+	     * Helper method to add to list and print
+	     * @param word    word to add to list
+	     * @param dll     list to add to
+	     */
+	    private static void addToListPrint(String word, LinkList dll) {
+	        System.out.println("Add " + word);
+	        dll.add(word);
+	        printFB(dll);
+	    }
+
+	    private static void delFromListPrint(String word, LinkList dll) {
+	        System.out.println("Remove from list " + word);
+	        dll.remove(word);
+	        printFB(dll);
+	    }
+
+
+	}
